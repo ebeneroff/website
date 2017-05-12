@@ -135,7 +135,7 @@ btn.addEventListener("click", function(evt) {
   canvas.width = canvas.width;
   ctx = canvas.getContext("2d");
   ctx.strokeStyle="black";
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "#F0F0F0";
   animate(400, 800, 400, 400);
   animate(400, 800, 400, 400);
   animate(410, 800, 405, 405);
