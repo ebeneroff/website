@@ -1,12 +1,12 @@
 var pause = 0;
-var shimmer = 5;
-var max_branches = 500;
+var shimmer = 10;
+var max_branches = 300;
 var branches = [];
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 ctx.strokeStyle = "black";
 ctx.fillStyle = "#F0F0F0";
-ctx.lineWidth = 1;
+ctx.lineWidth = 2;
 
 function drawBranch(x1,y1,x2,y2,ratio) {
   ctx.fillRect(0,0,800,800);
