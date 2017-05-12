@@ -31,7 +31,7 @@ function animate(x1, y1, x2, y2, ratio) {
   drawBranch(x1, y1, x2, y2, ratio);
   if(ratio < 1) {
     requestAnimationFrame(function() {
-      animate(x1, y1, x2, y2, ratio + .01);
+      animate(x1, y1, x2, y2, ratio + .3);
     });
   }
   else if(branch_count < max_branches)
