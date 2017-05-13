@@ -145,7 +145,7 @@ btn.addEventListener("click", function(evt) {
   ctx = canvas.getContext("2d");
   ctx.strokeStyle="#202020";
   ctx.fillStyle = "#F0F0F0";
-  animate(500, 800, 470, 600);
+  animate(400, 800, 370, 600);
   branch_count = 0;
   width = 5;
 });
@@ -157,4 +157,4 @@ pause.addEventListener("click", function(evt) {
 });
 
 /* trunk */
-animate(500, 800, 470, 500);
+animate(400, 800, 370, 500);
