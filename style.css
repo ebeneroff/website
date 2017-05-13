@@ -22,9 +22,8 @@ a
 #left-panel
 {
    display: inline-block;
-   margin-left: 60px;
-   margin-right: 20px;
-   width:25%;
+   margin-left: 5%;
+   width:30%;
 }
 
 #right-panel
