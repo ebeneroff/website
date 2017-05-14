@@ -22,11 +22,12 @@ a
 #left-panel
 {
    display: inline-block;
-   margin-left: 5%;
-   width:30%;
+   margin-left: 2%;
+   width:20%;
 }
 
 #right-panel
 {
    display: inline-block;
+   margin-left: 5%;
 }
