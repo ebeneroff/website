@@ -1,11 +1,11 @@
 var pause = 0;
-var shimmer = 20;
+var shimmer = 5;
 var width = 5;
-var max_branches = 600;
-var branches = [];
+var max_branches = 200;
+var trees = [];
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-ctx.strokeStyle = "#202020";
+ctx.strokeStyle = "#404040";
 ctx.fillStyle = "#F0F0F0";
 ctx.lineWidth = 5;
 
@@ -14,24 +14,22 @@ var red = Math.random() * 255;
 var green = Math.random() * 255;
 var blue = Math.random() * 255;
   
-function drawBranch(x1,y1,x2,y2,ratio, width) {
+function drawBranch(x1,y1,x2,y2,ratio) {
   ctx.beginPath();
   ctx.save();
   ctx.lineWidth = width;
   //ctx.fillRect(0,0,800,800);
   var a = Math.random();
   var b = Math.random();
-  red = Math.floor(Math.random() * 255);
-  green = Math.floor(Math.random() * 255);
-  blue = Math.floor(Math.random() * 255);
+  //red = Math.floor(Math.random() * 255);
+  //green = Math.floor(Math.random() * 255);
+  //blue = Math.floor(Math.random() * 255);
 
   //ctx.moveTo(x1,y1);
   
   /* acid tree */
   //ctx.strokeStyle = "rgb("+red+","+green+","+blue+")";
   
-  //invert = (invert == 1) ? -1 : 1;
-  //ctx.rotate(invert * Math.PI/180);
   x2 = x1 + ratio * (x2-x1); //+ a * shimmer;
   y2 = y1 + ratio * (y2-y1); //+ b * shimmer;
   //ctx.lineTo(x2,y2);
@@ -50,11 +48,11 @@ function drawBranch(x1,y1,x2,y2,ratio, width) {
     //green = 150;
     
 
-  //branches.push(x1, y1, x2, y2);
+  //trees.push(x1, y1, x2, y2);
 }
 
 var slope = 1, branch_count = 0;
-function animate(x1, y1, x2, y2, ratio) {
+function animateBranches(x1, y1, x2, y2, ratio) {
   if(pause == 1){
     return;
   }
@@ -67,13 +65,15 @@ function animate(x1, y1, x2, y2, ratio) {
   drawBranch(x1, y1, x2, y2, ratio, width);
   if(ratio < 1) {
     requestAnimationFrame(function() {
-      animate(x1, y1, x2, y2, ratio + .1);
+      animateBranches(x1, y1, x2, y2, ratio + .1);
     });
   }
   else if(branch_count < max_branches)
   {
-    animate(x2, y2, x2 + 50 * Math.random() + 10, y2 - Math.random() * 50 - 10);
-    animate(x2, y2, x2 - 50 * Math.random() - 10, y2 - Math.random() * 50 - 10);
+    animateBranches(x2, y2, x2 + 20 * Math.random(), y2 - Math.random() * 20);
+    animateBranches(x2, y2, x2 - 20 * Math.random(), y2 - Math.random() * 20);
+    //build_branches(x1, y1, x2, y2);
+    //build_branches(x1, y1, x2, y2);
     branch_count++;
   }
   else
@@ -88,13 +88,13 @@ function build_branches(x1, y1, x2, y2)
 {
   if(Math.random() > .5)
   {
-    animate(x2, y2, x2 + Math.random() * 120 * slope, y2 - Math.random() * 150 * slope);
+    animateBranches(x2, y2, x2 + Math.random() * 60, y2 - Math.random() * 60);
   }
   else
   {
-    animate(x2, y2, x2 - Math.random() * 120 * slope, y2 + Math.random() * 30 * slope);
+    animateBranches(x2, y2, x2 - Math.random() * 60, y2 + Math.random() * 30 );
   }
-  //animate(x2, y2, x2 + 100, y2 - 150);
+  //animateBranches(x2, y2, x2 + 100, y2 - 150);
   branch_count++;
 }
 
@@ -155,6 +155,3 @@ var pause = document.getElementById("pause");
 pause.addEventListener("click", function(evt) {
   pause ^= 1;
 });
-
-/* trunk */
-animate(400, 800, 370, 500);
