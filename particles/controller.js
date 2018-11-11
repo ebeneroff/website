@@ -12,6 +12,7 @@ function getMousePos(canvas, evt) {
   }
 
 var Controller = function(particles) {
+    document.getElementById('glCanvas').focus();
     this.mouse_down = false;
     this.particles = particles;
     this.canvas = document.querySelector("#glCanvas");
@@ -35,7 +36,6 @@ var Controller = function(particles) {
     }.bind(this)
 
     document.body.onmousemove = function(e) {
-        this.particles.add(e.offsetX, e.offsetY, 0)
         var mousePos = getMousePos(canvas, e);
         // console.log(evt)
         // if(this.mouse_down) 
@@ -45,7 +45,6 @@ var Controller = function(particles) {
         mouse.x = mousePos.x
         mouse.y = mousePos.y
         // }
-            
     }.bind(this)
 
     document.body.onkeydown = function(e) {
