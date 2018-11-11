@@ -34,7 +34,8 @@ var Controller = function(particles) {
         this.particles.drag_coefficient = .02;
     }.bind(this)
 
-    window.onmousemove = function(e) {
+    document.body.onmousemove = function(e) {
+        this.particles.add(e.offsetX, e.offsetY, 0)
         var mousePos = getMousePos(canvas, e);
         // console.log(evt)
         // if(this.mouse_down) 
