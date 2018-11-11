@@ -103,7 +103,7 @@ Particles.prototype.add = function(x, y, num) {
     this.velocities = v;
 }
 
-Particles.prototype.drag = function(x, y, xprev, yprev, num) {
+Particles.prototype.drag = function(x, y, xprev, yprev, num, coefficient) {
     let p = num * 2
 
     let X = convertToWorldX(x)
@@ -117,8 +117,8 @@ Particles.prototype.drag = function(x, y, xprev, yprev, num) {
         let b2 = .1 - (this.randomLookup() - this.randomLookup())*.1;
 
         if(x - b1 < Xprev && x + b1 > Xprev && y - b2 < Yprev && y + b2 > Yprev) {
-            this.velocities[i] += ((X - (Xprev + (this.randomLookup() - this.randomLookup())*.01))) * this.drag_coefficient;
-            this.velocities[i + 1] += (Y - (Yprev + (this.randomLookup() - this.randomLookup())*.01)) * this.drag_coefficient;
+            this.velocities[i] += ((X - (Xprev + (this.randomLookup() - this.randomLookup())*.01))) * coefficient;
+            this.velocities[i + 1] += (Y - (Yprev + (this.randomLookup() - this.randomLookup())*.01)) * coefficient;
         }
     }
 }

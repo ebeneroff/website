@@ -40,7 +40,7 @@ var Controller = function(particles) {
         // if(this.mouse_down) 
         // {
             // this.particles.add(e.offsetX, e.offsetY, 100);
-        this.particles.drag(mousePos.x, mousePos.y, mouse.x, mouse.y, 1000);
+        this.particles.drag(mousePos.x, mousePos.y, mouse.x, mouse.y, 1000, this.particles.drag_coefficient);
         mouse.x = mousePos.x
         mouse.y = mousePos.y
         // }
