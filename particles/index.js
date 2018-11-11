@@ -53,12 +53,13 @@ window.onload = function() {
 }
 
 var col = new Float32Array(controller.particles.num_particles * 3)
-// for(var i = 0; i < controller.particles.num_particles; i+=3) {
-//     col[i] = 1;
-//     col[i + 1] = 1;
-//     col[i + 2] = 1;
-// }
-col.fill(1)
+for(var i = 0; i < controller.particles.num_particles; i+=3) {
+    rand = controller.particles.randomLookup()
+    col[i] = rand + .25;
+    col[i + 1] = rand + .25;
+    col[i + 2] = rand + .25;
+}
+// col.fill(.6)
 
 function render() {
     // update velocities

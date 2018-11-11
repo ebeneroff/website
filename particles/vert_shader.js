@@ -9,6 +9,6 @@ varying lowp vec3 vColor;
 
 void main(void) {
 gl_Position = vec4(aVertexPosition.x, aVertexPosition.y, 0, 1.);
-gl_PointSize = 1.;
+gl_PointSize = 1.2;
 vColor = aVertexColor;
 }`;
