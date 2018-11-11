@@ -15,7 +15,7 @@ var Controller = function(particles) {
     this.mouse_down = false;
     this.particles = particles;
     this.canvas = document.querySelector("#glCanvas");
-    this.particles.drag_coefficient = .01;
+    this.particles.drag_coefficient = .02;
 
     document.body.onmousedown = function(e) { 
         // console.log("mouse down!");
@@ -31,7 +31,7 @@ var Controller = function(particles) {
         // this.particles.drag(e.offsetX, e.offsetY, 1000);
         mouse.x = 0;
         mouse.y = 0;
-        this.particles.drag_coefficient = .01;
+        this.particles.drag_coefficient = .02;
     }.bind(this)
 
     document.body.onmousemove = function(e) {
