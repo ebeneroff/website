@@ -12,7 +12,6 @@ function getMousePos(canvas, evt) {
   }
 
 var Controller = function(particles) {
-    document.getElementById('glCanvas').focus();
     this.mouse_down = false;
     this.particles = particles;
     this.canvas = document.querySelector("#glCanvas");

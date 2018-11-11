@@ -9,6 +9,7 @@ var canvas;
 
 window.onload = function() {
     canvas = document.querySelector("#glCanvas");
+    window.focus("#glCanvas");
     // canvas.width = document.body.clientWidth;
     // canvas.height = document.body.clientHeight;
     // console.log(canvas.width, canvas.height)
