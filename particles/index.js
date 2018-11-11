@@ -69,7 +69,7 @@ function render() {
 
     if(controller.particles.size > 0) {
         gl.bufferData(gl.ARRAY_BUFFER, controller.particles.particles, gl.STATIC_DRAW);
-        gl.drawArrays(gl.POINTS, 0, controller.particles.size);
+        gl.drawArrays(gl.POINTS, 0, controller.particles.size/2);
 
         // gl.bufferData(gl.ARRAY_BUFFER, col, gl.STATIC_DRAW);
     }

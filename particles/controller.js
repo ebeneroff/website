@@ -15,21 +15,23 @@ var Controller = function(particles) {
     this.mouse_down = false;
     this.particles = particles;
     this.canvas = document.querySelector("#glCanvas");
+    this.particles.drag_coefficient = .01;
 
     document.body.onmousedown = function(e) { 
         // console.log("mouse down!");
         this.mouse_down = true;
-        this.particles.advect(e.offsetX, e.offsetY)
+        this.particles.advect(e.offsetX, e.offsetY);
         this.particles.add(e.offsetX, e.offsetY, 1000);
-        
+        this.particles.drag_coefficient = .05;
     }.bind(this)
 
     document.body.onmouseup = function(e) {
         // console.log("mouse up!");
         this.mouse_down = false;
         // this.particles.drag(e.offsetX, e.offsetY, 1000);
-        mouse.x = 0
-        mouse.y = 0
+        mouse.x = 0;
+        mouse.y = 0;
+        this.particles.drag_coefficient = .01;
     }.bind(this)
 
     document.body.addEventListener('mousemove', function(e) {

@@ -37,6 +37,15 @@ a:link,a:visited
    color: #909090;
 }
 
+#instructions
+{
+    position: absolute;
+    bottom:0px;
+    right:25%;
+    left:45%;
+    margin-left:-150px;
+}
+
 #textbox
 {
    display: inline-block;

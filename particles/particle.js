@@ -18,7 +18,7 @@ Particles.prototype.initialize = function() {
         this.randomLUT[i] = Math.random();
     }
 
-    for(var i = 0; i < this.size; i++ ) {
+    for(var i = 0; i < this.size; i++) {
         this.particles[i] = this.randomLookup() - this.randomLookup();
         this.velocities[i] = (this.randomLookup() - this.randomLookup())/10000;
     }
@@ -117,8 +117,8 @@ Particles.prototype.drag = function(x, y, xprev, yprev, num) {
         let b2 = .1 - (this.randomLookup() - this.randomLookup())/10
 
         if(x - b1 < Xprev && x + b1 > Xprev && y - b2 < Yprev && y + b2 > Yprev) {
-            this.velocities[i] += ((X - (Xprev + (this.randomLookup() - this.randomLookup())/100))) * .01;
-            this.velocities[i + 1] += (Y - (Yprev + (this.randomLookup() - this.randomLookup())/100)) * .01;
+            this.velocities[i] += ((X - (Xprev + (this.randomLookup() - this.randomLookup())/100))) * this.drag_coefficient;
+            this.velocities[i + 1] += (Y - (Yprev + (this.randomLookup() - this.randomLookup())/100)) * this.drag_coefficient;
         }
     }
 }
@@ -139,7 +139,6 @@ Particles.prototype.update = function() {
             this.particles[i] += this.velocities[i];
             this.particles[i + 1] += this.velocities[i + 1];
         }
-        
     }
 }
 
