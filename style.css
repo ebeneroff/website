@@ -4,6 +4,19 @@ body
    background-color: #F0F0F0;
 }
 
+html, body {
+    overflow: hidden;
+    margin: 0;
+    height:100%;
+}
+
+canvas
+{
+    position: absolute;
+    z-index:-1;
+
+}
+
 a
 {
    text-decoration: none;
@@ -11,20 +24,20 @@ a
 
 a:link,a:visited
 {
-   color: brown;
+   color: orange;
 }
 
 #subtext
 {
-   color: #505050;
+   color: #c0c0c0;
 }
 
 #subsubtext
 {
-   color: #707070;
+   color: #909090;
 }
 
-#left-panel
+#textbox
 {
    display: inline-block;
    margin-left: 2%;
